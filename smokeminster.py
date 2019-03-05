@@ -5,7 +5,7 @@ import argparse
 import argcomplete
 import xmltodict
 import os
-from collections import defaultdict
+from collections import defaultdict, OrderedDict
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -79,6 +79,7 @@ def generate_min_db(smdb, subtract_dats):
 if __name__ == '__main__':
     smdb = parse_smdb(ARGS.base_smdb)
     min_db = generate_min_db(smdb, ARGS.subtract_dats)
+    min_db = OrderedDict(sorted(min_db.items(), key=lambda x: x[1]['filename']))
 
     f = open(ARGS.min_smdb, "w+")
     for m in min_db:
