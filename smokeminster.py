@@ -10,7 +10,7 @@ from collections import defaultdict
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("-b", "--base_smdb",
+    parser.add_argument("-b", "--base",
                         dest="base_smdb",
                         required=True,
                         help="Smokemonster SMDB")
@@ -21,12 +21,12 @@ if __name__ == '__main__':
                         required=True,
                         help="DAT to subtract")
 
-    parser.add_argument("-o", "--output_folder",
+    parser.add_argument("-o", "--out",
                         dest="output_folder",
                         required=True,
                         help="Desired output folder")
 
-    parser.add_argument("-m", "--min_smdb",
+    parser.add_argument("-m", "--min",
                         dest="min_smdb",
                         required=True,
                         help="Smokemonster minus No-Intro")
